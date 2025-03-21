@@ -4,10 +4,10 @@ import Pricing from '@/components/sections/home/Pricing';
 import Footer from '@/components/common/Footer';
 import Testimonial from '@/components/sections/home/Testimonial';
 import Hero from '@/components/sections/home/Hero';
-import FeatureOne from '@/components/sections/home/featureOne';
 import CTA from '@/components/sections/home/CTA';
 import Logos from '@/components/sections/home/Logos';
 import PricingComponent from '@/components/common/Pricing';
+import FeatureOne from '@/components/sections/home/FeatureOne';
 
 const features = [
   {

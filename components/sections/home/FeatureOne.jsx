@@ -19,7 +19,7 @@ const features = [
   },
 ]
 
-export default function FeatureOne() {
+const FeatureOne = () =>{
   return (
     <div className="overflow-hidden bg-[#071b1e] py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -57,3 +57,5 @@ export default function FeatureOne() {
     </div>
   )
 }
+
+export default FeatureOne;

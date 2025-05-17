@@ -9,6 +9,8 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+import ContactForm from '@/components/common/ContactForm';
+import Footer from '@/components/common/Footer';
 
 const PricingPage = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -21,45 +23,48 @@ const PricingPage = () => {
     }
   };
 
-  const faqs = [
+const faqs = [
     {
-      question: "What is included in the subscription plan?",
-      answer: "Our subscription plan includes access to unlimited devices, unlimited patients, patient portal, encounter management, and comprehensive patient management tools. This is perfect for healthcare providers looking for a monthly payment option."
+      question: "What features are included in the Free plan?",
+      answer: "The Free plan includes 1 clinic, unlimited users and patients, core EMR features like SOAP notes, vitals, ICD-10 codes, prescriptions, lab requests, and up to 3 AI-generated documents per day. It’s ideal for solo practitioners starting out."
     },
     {
-      question: "How does the Lifetime Premium differ from the basic subscription?",
-      answer: "The Lifetime Premium plan provides all the features of the basic subscription, but instead of monthly payments, you make a one-time payment of ₱69,500 plus an annual fee of ₱5,000. This is ideal for practices looking for long-term cost savings."
+      question: "What’s the difference between the Basic and Pro plans?",
+      answer: "The Basic plan includes the same core features as Free, but increases AI document generation to 30/day and allows additional clinics for ₱450/month. The Pro plan supports 2 clinics by default, unlimited AI documents, and will include priority access to upcoming features like online consultations, POS, and inventory management."
     },
     {
-      question: "What additional features come with the Lifetime Pro plan?",
-      answer: "The Lifetime Pro plan includes all Premium features with enhanced capabilities, and comes with a one-time payment of ₱99,000 plus an annual fee of ₱8,000. This is our most comprehensive solution for larger medical practices."
+      question: "Can I add more clinics to my plan?",
+      answer: "Yes, additional clinics can be added. For Basic plans, it's ₱450 per clinic per month. For Pro plans, it's ₱1,199 per clinic per month."
     },
     {
-      question: "Can I upgrade my plan later?",
-      answer: "Yes, you can upgrade from subscription to Lifetime Premium or Pro at any time. We'll provide credit for your existing subscription toward your upgrade purchase."
+      question: "Are online consultations available?",
+      answer: "Online consultations are not yet available, but are coming soon. They will be available first for Pro plan users."
     },
     {
-      question: "Is there a free trial available?",
-      answer: "Yes, we offer a 14-day free trial for our subscription plan so you can experience our platform before committing to a purchase."
+      question: "What is the limit on AI-generated documents?",
+      answer: "AI-generated document limits depend on your plan: Free (3/day), Basic (30/day), and Pro (unlimited). These documents include medical records, notes, and patient-related reports powered by AI."
+    },
+    {
+      question: "Are POS and Inventory features included?",
+      answer: "POS and Inventory management features are currently in development and will be released soon. All plans will have access, but Pro users will get the most advanced functionality."
+    },
+    {
+      question: "Do all plans support unlimited users and patients?",
+      answer: "Yes, all plans—Free, Basic, and Pro—support unlimited users and unlimited patient records, ensuring scalability for clinics of any size."
+    },
+    {
+      question: "Can I upgrade or downgrade my plan later?",
+      answer: "Yes, you can upgrade or downgrade your subscription at any time. Your data remains intact, and your new plan’s features will be applied immediately."
+    },
+    {
+      question: "Is there a limit to the number of patient encounters?",
+      answer: "Yes, the Free plan includes essential features for up to 30 patient encounters per month. Higher-tier plans remove this limit."
     }
   ];
 
   return (
     <div className="min-h-screen bg-[#071b1e] text-white">
       <Navbar />
-      
-      {/* Hero Section */}
-      <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 text-center">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl mb-6">
-            Simple, Transparent Pricing
-          </h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Choose the perfect plan for your healthcare practice. 
-            All plans include our core features with no hidden fees.
-          </p>
-        </div>
-      </div>
 
       {/* Pricing Component */}
       <PricingComponent />
@@ -72,77 +77,65 @@ const PricingPage = () => {
             <thead>
               <tr className="border-b border-[#2F9BAE]">
                 <th className="py-4 px-6 text-left">Feature</th>
-                <th className="py-4 px-6 text-center">Subscription</th>
-                <th className="py-4 px-6 text-center">Native</th>
-                <th className="py-4 px-6 text-center">Lifetime Premium</th>
+                <th className="py-4 px-6 text-center">Free</th>
+                <th className="py-4 px-6 text-center">Basic</th>
+                <th className="py-4 px-6 text-center">Pro</th>
               </tr>
             </thead>
             <tbody>
-            <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Online Access</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✗</td>
-                <td className="py-4 px-6 text-center">✓</td>
+              <tr className="border-b border-gray-700">
+                <td className="py-4 px-6">Clinics</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Unlimited Devices</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">Users</td>
+                <td className="py-4 px-6 text-center">1</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Unlimited Patients</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">Patients</td>
+                <td className="py-4 px-6 text-center">150</td>
+                <td className="py-4 px-6 text-center">2,000</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Patient Portal</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">AI Generated Documents /day</td>
+                <td className="py-4 px-6 text-center">3</td>
+                <td className="py-4 px-6 text-center">10</td>
+                <td className="py-4 px-6 text-center">Unlimited</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Encounter Management</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">Medical Calculator</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">✅</td>
+                <td className="py-4 px-6 text-center">✅</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">SOAP Notes</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">Online Consultations</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">Coming soon</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">ICD-10 Codes</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">POS</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">Coming soon</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Patient Management</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
-                <td className="py-4 px-6 text-center">✓</td>
+                <td className="py-4 px-6">Inventory</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">Coming soon</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Annual Fee</td>
-                <td className="py-4 px-6 text-center">Included in subscription</td>
-                <td className="py-4 px-6 text-center">No annual fee</td>
-                <td className="py-4 px-6 text-center">₱3,200 a year/ doctor</td>
-              </tr>
-              <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">Priority Support</td>
-                <td className="py-4 px-6 text-center">Email, Chat</td>
-                <td className="py-4 px-6 text-center">Email, Chat & Phone</td>
-                <td className="py-4 px-6 text-center">Email, Chat & Phone</td>
-              </tr>
-              <tr className="border-b border-gray-700">
-                <td className="py-4 px-6">When to Choose</td>
-                <td className="py-4 px-6 text-center">Ideal for clinics that need online access, regular updates, and support. Best for those who prefer lower upfront costs.</td>
-                <td className="py-4 px-6 text-center">Perfect for single-location clinics that don’t need internet access. A one-time purchase with no recurring fees.</td>
-                <td className="py-4 px-6 text-center">Best for long-term cost savings.</td>
+                <td className="py-4 px-6">OCR Scanning</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">✖︎</td>
+                <td className="py-4 px-6 text-center">Coming soon</td>
               </tr>
             </tbody>
           </table>
@@ -154,113 +147,72 @@ const PricingPage = () => {
         <h2 className="text-3xl font-bold text-center mb-16">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-                <AccordionTrigger>How does the lifetime plan differ from the basic subscription?</AccordionTrigger>
+              <AccordionTrigger>What features are included in the Free plan?</AccordionTrigger>
                 <AccordionContent>
-                  The Lifetime Premium plan provides all the features of the basic subscription, but instead of monthly payments, you make a one-time payment of ₱50,000 plus an annual fee of ₱3,200 per doctor. This is ideal for practices looking for long-term cost savings.
+                  The Free plan includes 1 clinic, unlimited users and patients, core EMR features like SOAP notes, vitals, ICD-10 codes, prescriptions, lab requests, and up to 3 AI-generated documents per day. It’s ideal for solo practitioners starting out.
                 </AccordionContent>
-            </AccordionItem>
+              </AccordionItem>
 
-            <AccordionItem value="item-2">
-                <AccordionTrigger>Can I upgrade my plan later?</AccordionTrigger>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What’s the difference between the Basic and Pro plans?</AccordionTrigger>
                 <AccordionContent>
-                  Yes, you can upgrade from subscription to the lifetime plan at any time. We'll provide credit for your existing subscription toward your upgrade purchase.
+                  The Basic plan includes the same core features as Free, but increases AI document generation to 30/day and allows additional clinics for ₱450/month. The Pro plan supports 2 clinics by default, unlimited AI documents, and will include priority access to upcoming features like online consultations, POS, and inventory management.
                 </AccordionContent>
-            </AccordionItem>
+              </AccordionItem>
 
-            <AccordionItem value="item-3">
-                <AccordionTrigger>Can I access my data online if I use the native app?</AccordionTrigger>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Can I add more clinics to my plan?</AccordionTrigger>
                 <AccordionContent>
-                  No, the native app includes all the features, but your data will only be accessible on your clinic computer. Online access is not available.
+                  Yes, additional clinics can be added. For Basic plans, it's ₱450 per clinic per month. For Pro plans, it's ₱1,199 per clinic per month.
                 </AccordionContent>
-            </AccordionItem>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger>Are online consultations available?</AccordionTrigger>
+                <AccordionContent>
+                  Online consultations are not yet available, but are coming soon. They will be available first for Pro plan users.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger>What is the limit on AI-generated documents?</AccordionTrigger>
+                <AccordionContent>
+                  AI-generated document limits depend on your plan: Free (3/day), Basic (30/day), and Pro (unlimited). These documents include medical records, notes, and patient-related reports powered by AI.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger>Are POS and Inventory features included?</AccordionTrigger>
+                <AccordionContent>
+                  POS and Inventory management features are currently in development and will be released soon. All plans will have access, but Pro users will get the most advanced functionality.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7">
+                <AccordionTrigger>Do all plans support unlimited users and patients?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, all plans—Free, Basic, and Pro—support unlimited users and unlimited patient records, ensuring scalability for clinics of any size.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8">
+                <AccordionTrigger>Can I upgrade or downgrade my plan later?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, you can upgrade or downgrade your subscription at any time. Your data remains intact, and your new plan’s features will be applied immediately.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-10">
+                <AccordionTrigger>How is the subscription billed?</AccordionTrigger>
+                <AccordionContent>
+                  All our paid plans are billed annually. This helps reduce administrative overhead and provides better value compared to monthly billing.
+                </AccordionContent>
+              </AccordionItem>
         </Accordion>
       </div>
 
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-[#106979] to-[#196977] py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to get started?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Choose the plan that works for your practice and start managing your patients more efficiently today.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="#"
-              className="bg-[#2F9BAE] hover:bg-[#39b4ca] px-8 py-3 rounded font-bold transition duration-150"
-            >
-              Subscribe
-            </a>
-            <a
-              href="#"
-              className="bg-transparent border border-white hover:bg-white hover:text-[#196977] px-8 py-3 rounded font-bold transition duration-150"
-            >
-              Get the Lifetime Plan
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Section */}
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Still have questions?</h2>
-            <p className="mb-8">
-              Our team is here to help you choose the right plan for your healthcare practice. 
-              Contact us for personalized assistance.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <svg className="w-6 h-6 mr-3 text-[#2F9BAE]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>sales@clinicore.io</span>
-              </div>
-              <div className="flex items-center">
-                <svg className="w-6 h-6 mr-3 text-[#2F9BAE]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>+63 (2) 8123 4567</span>
-              </div>
-            </div>
-          </div>
-          <div className="bg-[#13343b] p-8 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6">Contact Us</h3>
-            <form>
-              <div className="mb-4">
-                <label className="block mb-2">Your Name</label>
-                <input
-                  type="text"
-                  className="w-full p-3 bg-[#071b1e] rounded"
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-2">Your Email</label>
-                <input
-                  type="email"
-                  className="w-full p-3 bg-[#071b1e] rounded"
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-2">Message</label>
-                <textarea
-                  className="w-full p-3 bg-[#071b1e] rounded"
-                  placeholder="Your message"
-                  rows={4}
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#2F9BAE] hover:bg-[#39b4ca] px-8 py-3 rounded font-bold transition duration-150"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <ContactForm />
+      <Footer />
     </div>
   );
 };

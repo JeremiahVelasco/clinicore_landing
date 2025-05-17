@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-bl from-[#106979] to-[#051b1f]">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-t from-[#2F9BAE] to-[#071B1F]">
       <div className="md:w-2/3 w-full px-4 text-gray-800 flex flex-col">
         <div className="w-full text-7xl font-bold">
           <h1 className="w-full text-white tracking-tight md:w-2/3">Get in touch.</h1>
@@ -13,29 +14,41 @@ const Footer = () => {
           We're here to assist you! Whether you have questions, need support, or just want to learn more, our team is ready to help you every step of the way.
           </p>
           <div className="w-44 pt-6 md:pt-0">
-            <a className="bg-[#2F9BAE] hover:bg-[#33abc0] text-white justify-center text-center rounded-lg shadow px-10 py-3 flex items-center cursor-pointer">
+            <Link href={'/pages/contact'} className="bg-[#2F9BAE] hover:bg-[#33abc0] text-white justify-center text-center rounded-lg shadow px-10 py-3 flex items-center cursor-pointer">
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col">
           <div className="flex mt-24 mb-12 flex-row justify-between items-center">
             <div className="hidden md:block">
-              <Logo />
+              <Link href="/" className="-m-1.5 p-1.5">
+                <span className="sr-only">Clinicore</span>
+                {/* Use Next.js Image component with proper import */}
+                <img
+                  alt="Clinicore"
+                  src="/Clinicore_RSF.png" 
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
             
             <div className="hidden md:flex space-x-8">
-              <a className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Demo</a>
-              <a className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Pricing</a>
-              <a className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Contact</a>
-              <a className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Why us</a>
+              <Link href={'/pages/coming_soon'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Demo</Link>
+              <Link href={'/pages/pricing'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Pricing</Link>
+              <Link href={'/pages/coming_soon'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Find Clinic</Link>
+              <Link href={'/pages/contact'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Contact</Link>
+              <Link href={'/pages/coming_soon'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Data & Security</Link>
+              <Link href={'/pages/coming_soon'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Terms of Use</Link>
+              <Link href={'/pages/coming_soon'} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">FAQ</Link>
+              {/* <Link href={} className="cursor-pointer text-gray-50 hover:text-[#2F9BAE] uppercase">Why us</Link> */}
             </div>
           </div>
           
           <hr className="border-gray-50"/>
           <p className="w-full text-center my-12 text-gray-50">
-            Copyright © 2025 Velocity Software Solutions
+            Copyright © 2025 Clinicore
           </p>
         </div>
       </div>

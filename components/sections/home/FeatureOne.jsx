@@ -1,20 +1,20 @@
-import { BanknotesIcon, ChartPieIcon, ClipboardDocumentListIcon } from '@heroicons/react/20/solid'
+import { ChartPieIcon, ClipboardDocumentListIcon, SparklesIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
     name: 'Electronic Medical Records.',
     description:
-      'Securely store and access patient records anytime, anywhere. Reduce paperwork and improve efficiency.',
+      'Digitally manage patient records with secure access anytime. Eliminate paperwork and streamline medical documentation.',
     icon: ClipboardDocumentListIcon,
   },
   {
-    name: 'Point of Sale.',
-    description: 'Easily manage transactions, billing, and inventory with an integrated POS system.',
-    icon: BanknotesIcon,
+    name: 'AI Assistant.',
+    description: 'Get instant support for administrative tasks, patient inquiries, and scheduling through an intelligent AI-powered assistant.',
+    icon: SparklesIcon,
   },
   {
     name: 'Advanced Analytics.',
-    description: 'Gain insights into clinic performance with real-time reports and data-driven decision-making.',
+    description: 'Track clinic performance, patient trends, and operational metrics with comprehensive, real-time analytics.',
     icon: ChartPieIcon,
   },
 ]
@@ -26,11 +26,11 @@ export default function FeatureOne() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
-                Simplify Your Clinic’s Workflow
+            <p className="mt-2 text-5xl font-semibold tracking-tight text-pretty text-white md:text-4xl">
+              Medical Record Management with Built-in AI Assistant
               </p>
               <p className="mt-6 text-lg/8 text-gray-200">
-                Manage patient records, sales, and analytics—all in one seamless platform. A smarter way to run your clinic.
+                Manage medical records, patient queues and analytics with the help of your AI assistant—bringing smarter, more efficient operations to your practice in one seamless platform.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
                 {features.map((feature) => (

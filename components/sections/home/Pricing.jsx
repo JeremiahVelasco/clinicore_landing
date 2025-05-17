@@ -5,30 +5,30 @@ import React, { useState } from 'react';
 const PricingComponent = () => {
   const [billingType, setBillingType] = useState('month');
   const [prices, setPrices] = useState({
-    subscriptionPrice: '1,500',
-    premiumPrice: '69,500',
-    proPrice: '99,000'
+    freePrice: 'Free',
+    basicPrice: '499',
+    proPrice: '1,299'
   });
   
   const [billingTexts] = useState({
     subscription: '/ MONTH',
-    premium: ' one time',
-    pro: ' one time'
+    basic: ' / MONTH',
+    pro: ' / MONTH'
   });
 
   const handleBillingChange = (type) => {
     setBillingType(type);
     if (type === 'month') {
       setPrices({
-        subscriptionPrice: '1,500',
-        premiumPrice: '69,500',
-        proPrice: '99,000'
+        freePrice: 'Free',
+        basicPrice: '499',
+        proPrice: '1,299'
       });
     } else {
       setPrices({
-        subscriptionPrice: '16,000',
-        premiumPrice: '69,500',
-        proPrice: '99,000'
+        subscriptionPrice: 'Free',
+        basicPrice: '499',
+        proPrice: '1,299'
       });
     }
   };
@@ -121,17 +121,17 @@ const PricingComponent = () => {
       <div className="w-full 2xl:w-3/4 flex items-center justify-center px-8 md:px-32 lg:px-16 2xl:px-0 mx-auto -mt-8">
         <div className="w-full grid grid-cols-1 xl:grid-cols-3 gap-8">
           <PricingCard 
-            title="Subscription" 
+            title="Free" 
             price={prices.subscriptionPrice} 
             features={basicFeatures}
           />
           <PricingCard 
-            title="Lifetime Premium" 
+            title="Basic" 
             price={prices.premiumPrice} 
             features={premiumFeatures}
           />
           <PricingCard 
-            title="Lifetime Pro" 
+            title="Pro" 
             price={prices.proPrice} 
             features={proFeatures}
           />

@@ -8,6 +8,7 @@ import CTA from '@/components/sections/home/CTA';
 import Logos from '@/components/sections/home/Logos';
 import PricingComponent from '@/components/common/Pricing';
 import FeatureOne from '@/components/sections/home/FeatureOne';
+import FeatureTwo from '@/components/sections/home/FeatureTwo';
 
 const features = [
   {
@@ -34,8 +35,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <FeatureOne />
+      <FeatureTwo />
       {/* <Testimonial /> */}
-      <PricingComponent />
+      {/* <PricingComponent /> */}
       <CTA />
       {/* <Logos /> */}
       <Footer />

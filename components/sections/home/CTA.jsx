@@ -21,7 +21,7 @@ export default function CTA() {
                 Streamline your practice. Start using our app today.
               </h2>
               <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                Enhance efficiency and focus—simplify your workflow with our app.
+                Enhance efficiency and focus—simplify your workflow with Clinicore.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
